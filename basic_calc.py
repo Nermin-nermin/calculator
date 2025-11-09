@@ -47,7 +47,7 @@ class SafeEval(ast.NodeVisitor):
     def visit_Name(self, node):
         if node.id in self.env:
             return self.visit(node.id)
-        raise NameError('UNknown')
+        raise NameError('Unknown')
     
     def visit_Num(self, node):
         return node.n
@@ -122,3 +122,4 @@ if __name__ == '__main__':
         run_once(''.join(sys.argv[1:]))
     else:
         run_repl()
+
